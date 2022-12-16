@@ -148,7 +148,7 @@ margin-right: 400px;
                                  <a class="nav-link" href="hakkımda.html">Hakkında</a>
                               </li>
                            </ul>
-                           <div class="sign_btn"><a href="login.htm">Admin Girişi</a></div>
+                           <div class="sign_btn"><a href="giris.htm">Admin Girişi</a></div>
                         </div>
                      </nav>
                   </div>
