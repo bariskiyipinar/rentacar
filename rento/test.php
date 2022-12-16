@@ -1,10 +1,13 @@
-
+<?php include "sc-kayit-al.php" ?>
+<?php error_reporting(0); ?>
 
 <!DOCTYPE html>
-<html>
-   <head>
 
-      <link rel="icon" href="images/logo.png" type="images/logo.png />
+<html>
+        <head>
+            <meta charset="utf8">
+            <title>Araç Stok Takibi</title>
+            <link rel="icon" href="images/logo1.jpg" type="images/logo1.jpg />
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <!-- mobil -->
@@ -28,7 +31,11 @@
      
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-   </head>
+        </head>
+        <body>
+
+
+
 
 
 <style>
@@ -71,6 +78,24 @@
      align-items: center;
      background-size: 100% 100%;
 
+}
+.form{
+    
+
+    background-color: #f6d601;
+     display: inline-block;
+     padding: 7px 35px;
+     border-radius: 30px;
+     color: #000;
+     font-size: 17px;
+margin-right: 400px;
+     opacity: 0.8;
+   padding: 30px;
+   
+   width: 400px;
+   height: auto;
+
+  
 }
 
    
@@ -122,11 +147,8 @@
                               <li class="nav-item">
                                  <a class="nav-link" href="hakkımda.html">Hakkında</a>
                               </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="#">Bize Ulaşın</a>
-                              </li>
                            </ul>
-                           <div class="sign_btn"><a href="#">Admin Girişi</a></div>
+                           <div class="sign_btn"><a href="login.htm">Admin Girişi</a></div>
                         </div>
                      </nav>
                   </div>
@@ -137,63 +159,67 @@
       <!-- son başlık iç -->
 
       <!--son başlık-->
+      
 
-<br><br>
+      <section class="banneryeni">
 
-<section class="banneryeni">
-   <div class="container">
-      <div class="row d_flex">
-         <div class="col-md-12">
-            
-            <div style="text-align: center;">
-               <img src="images/car_img1.png" >
-              </div>
-               <h3 align="center" style="color: white;margin-top: 40px;"> GENEL ÖZELLİKLERİ VE FİYATI</h3>
-                  <ol style="margin-left: 370px;margin-top: 5px;color: white;" type="circle">
+      
+           <!--PHP KISMI-->
+        <div class="form"  style="color:black;font-family:Times New Roman;font-size:4;">
+        <h4  style="font-weight: bold;color:black;">ARAÇ STOK TAKİBİ</h4>
+              <form class=" " action=" " method="post" >
+                  <input type="text" name="Aracid" value="">
+                  <input type="submit" name="gonder" value="Göster">
+              </form>
            
-                    <li> ✔️ Sabit fiyat</li>
-                    <li> ✔️ Otomatik uçuş ve tren takibi </li>
-                    <li> ✔️ Talep üzerine çocuk koltukları mevcuttur </li>
-                    <li> ✔️ Talep üzerine çocuk koltukları mevcuttur </li> 
-                    <li> ✔️ 24/7 destek hattı</li>
-                    <li> ✔️ Kiralama Fiyatı 3500 tl'dir   </li>
-           
-                  </ol>
-            
-             <br>
-             <br>
-           
-             <div class="row mt-5" >
-              <div class="col-12" >
-                  <u> <h2 class="title3"><font color="red" size="6" face="Perpetua"></font></h2> </u>
-              </div>
-           
-              <div class="galeri" align="center"> 
-                <a href="images/1.1.jpg"> 
-                    <img src="images/1.1.jpg" > 
-                </a> 
-                <a href="images/1.2.jpg"> 
-                    <img src="images/1.2.jpg" > 
-                </a> 
-                <a href="images/1.3.jpg"> 
-                    <img src="images/1.3.jpg" > 
-                </a> 
-                <a href="images/1.4.jpg"> 
-                  <img src="images/1.4.jpg" > 
-              </a>  
-               <a href="images/1.5.jpg"> 
-                <img src="images/1.5.jpg" > 
-            </a> 
-            </div>
+<?php 
+
+               if($kayit->num_rows>0)
+               {
+                  while($satir=$kayit->fetch_assoc())
+                  {
+                      echo "<font color=white ><b>Araç Numarası:</b></font>" . $satir["Arac_id"]."<br>";
+                      echo "Araç Markası:" . $satir["Arac_markası"]."<br>";
+                      echo "Araç Fiyatı:" . $satir["Arac_fiyati"]."<br>";
+                      echo "Araç Stok:" . $satir["Arac_stok"]."<br>";
+                  }
+               }
+?>
 
          </div>
-      </div>
-   </div>
+         
+          <!--PHP KISMI BİTİŞ-->     
+            
 </section>
 
 
 
-
+<div class="row mt-5" style="margin-left: 300px;"  >
+              
+           
+              <div class="galeri" > 
+                <a href="images/1.1.jpg"> 
+                    <img src="images/1.1.jpg" > 
+                </a> 
+                <a href="images/2.1.jpg"> 
+                    <img src="images/2.1.jpg" > 
+                </a> 
+                <a href="images/3.1.jpg"> 
+                    <img src="images/3.1.jpg" > 
+                </a> 
+                <a href="images/4.1.jpg"> 
+                  <img src="images/4.1.jpg" > 
+              </a>  
+               <a href="images/5.1.png"> 
+                <img src="images/5.1.png" > 
+            </a> 
+            <a href="images/6.5.png"> 
+                <img src="images/6.5.png" > 
+            </a> 
+            </div>
+          
+</div>
+          
         
 
 
@@ -216,8 +242,8 @@
 
 
 
+        </body>
+</hmtl>
 
-      
-   </body>
-</html>
+
 
