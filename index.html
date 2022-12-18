@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Araç Kiralama Tanıtım </title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap.min.js">
+    <link rel="stylesheet" href="bootstrap-grid.min.css">
+   
+    <style>
+
+        .arkaplan{
+        background-image:url(resim1.jpg);
+		background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        }
+        .anlatım{
+            border-style: solid;
+            border-width: 3px;
+            border-color: #0000CC;
+            margin: 15px;
+            padding: 15px;
+            background-color: rgb(255, 245, 245);
+        }
+        .XAMPP{
+            border-style: solid;
+            border-width: 3px;
+            border-color: #0000CC;
+            margin: 15px;
+            padding: 15px;
+            background-color: rgb(255, 245, 245);
+        }
+        h2{
+            color: rgb(33, 12, 12);
+            font-style: bold;
+            margin: 15px;
+            padding: 15px;
+            background-color:lightblue;
+        }
+        h1{
+            color:white;
+            background-color: black;
+            font-style: bold;
+            margin: 15px;
+            padding: 15px;
+           
+        }
+        .yazi{
+            font-family:Verdana,  Tahoma, sans-serif
+        }
+        h3{
+            color: rgb(33, 12, 12);
+            font-style: bold;
+            margin: 15px;
+            padding: 15px;
+            background-color:bisque
+        }
+        h4{
+            color: black;
+            font-style: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .kenar{
+            border-style: solid;
+            border-width: 3px;
+            border-color: #0000CC;
+            animation-name: cssanimasyonlar1;
+            animation-duration: 30s;
+        }
+
+      
+
+            @keyframes cssanimasyonlar1 {
+                
+            50%  { background-color: bisque   }
+           
+            50%  { background-color: lightblue;   }
+            
+        }
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.gallery {
+  width: 640px;
+  margin: 0 auto;
+  padding: 5px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,.3);
+}
+
+.gallery > div {
+  position: relative;
+  float: left;
+  padding: 5px;
+}
+
+.gallery > div > img {
+  display: block;
+  width: 200px;
+  transition: .1s transform;
+  transform: translateZ(0); /* hack */
+}
+
+.gallery > div:hover {
+  z-index: 1;
+}
+
+.gallery > div:hover > img {
+  transform: scale(1.7,1.7);
+  transition: .3s transform;
+}
+
+.cf:before, .cf:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.cf:after {
+  clear: both;
+}
+
+    </style>
+
+
+</head>
+
+
+<body class="arkaplan">
+
+    <div class="anlatım " >
+        
+        <center><h2>GİRİŞ</h2></center>
+
+        <p class="yazi">Herkese merhaba bu projemde sizlere Rent a Car Sitesini nasıl yaptım ,arka planında hangi kodlar mevcut bunlardan bahsedicem.<br>
+
+        Rent a Car projemin kodlarına ulaşmak isterseniniz : <a href="https://github.com/bariskiyipinar/rentacar">GitHub</a></p>
+
+    </div>
+    <div class="XAMPP">
+
+        <center><h2>XAMPP PROGRAMINI İNDİRME VE MYSQL</h2></center>
+
+        <p class="yazi">Öncelikle PHP kodunun ve phpMYAdmin veri tabanının çalışması için XAMPP uygulamasını indirmemiz gerekiyor.<br><br>Aşağıda ki adımları izlemenizi istiyorum.<br>
+
+        <a href="https://www.apachefriends.org/tr/download.html">Buraya</a> tıklayarak aşağıdaki  işletim sistemlerinden size uyanı seçip indir sekmesine tıklayın.<br><br>
+
+        <img  src="ekrangörüntüsü1.png" height="400px"> <img style="margin-left: 100px;"src="ekrangörüntüsü2.png" height="400px"><br>
+
+         <h4 style="margin-left: 220px;">XAMPP indirme konumu</h4>   <h4 style="margin-left: 1100px;margin-top:-50px;">XAMPP CONTROL PANEL</h4>
+         <br>
+        <p class="yazi">Gerekli indirme işlemini yaptıktan sonra setup dosyasını bilgisayarınıza kurun.</p>
+        <p class="yazi">Şimdi PHP kodlarının aktif gelmesi için  yapmamız gereken işlem XAMPP Control Panelinden  ilk başta bulunan <font color="blue">Apache</font> modülünün yanındaki start  butonuna basıp,  aktif etmeniz gerekir.<br>
+         Benim gibi MySQL veri tabanını kullanmak istiyor iseniz eğer <font color="blue">Apache</font> yanında bulunan <font color="blue">MySQL</font> modülününün yanınadki start butonuna ve admin butonuna basıp aktif etmeniz gerekir.</p>
+   
+       <p class="yazi">Tabiki bu kadar değil ,şimdi ise PHP kodlarının çalışması için ana(main) dosyanızı<font color="blue"> örneğin:</font>"index.php" XAMPP uygulamasının içindeki <font color="blue">htdocs</font> klasörüne atmamız gerekiyor.(tabikide apache butonunu aktif ettikten sonra)</p>
+     
+
+           </div>
+       
+   
+    
+    <div class="anlatım">
+        <center><h2>PHP VE MYSQL VERİ TABANI</h2></center>
+        <p class="yazi">PHP bir web programlama dili ve MySQL'de bir SQL veritabanıdır.<br>
+             Ben projemde PHP ve MySQL veritabanını kullandım.Bildiğim kadarıyla PHP başka veri tabanları ile de kullanılabilmektedir.<br>
+             PHP aynı HTML  gibi sade metin dosyalarıdır.Tek farkı PHP kodlarını ve MySQL veri tabanını çalıştırmak için <font color="blue">LocalHost</font> işlemi yapmamız gereklidir.<br><br>
+             Sizlere zaten yukarıda hangi programı kullandığım ve nasıl aktif edebileceğinizden kısaca bahsettim.
+        </p>
+        <p class="yazi">Örneğin bir PHP koduna bakalım</p>
+        <br>
+
+        <center>
+        <img class="img-fluid" src="resim2.png" width="400px">
+        </center>
+
+        <center>
+        <p class="yazi">PHP kodunu kullanarak <font color="blue">'Hello World!'</font> yazımı.</p>
+        </center>
+        <br>
+        <h3 class="yazi">RESİMİN KODLARI</h3>
+        <code >
+            <pre >
+  <font color="blue" size="3"> < ?php </font>
+
+  <font color="blue">   echo </font>'Hello World!'; 
+  
+  <font color="blue">  ?>  </font>
+            </pre>
+        </code>
+
+        <!--kod açıklama-->
+           <p class="yazi"> PHP kodları bu iki etiketin arasına yazılır.<font color="blue" size="3"> '< ?php  ?>'</font></p>
+           <p class="yazi"><font color="blue" size="3"> Echo </font>etiketi içine yazılan değer ekrana çıktı olarak döner.</p>     
+        <!--son-->
+    </div>
+
+
+
+    <div class="anlatım">
+        <center><h2>PHPMySQL VERİ TABANI</h2></center>
+        <p class="yazi">PHPMySQL Veri tabanı kullanmak oldukça basittir.Öncelikle size veri tabanını nasıl kullanacağınızdan bahsedicem.</p><br>
+       <center> <img  src="ekrangörüntüsü4.png" style="width: 900px;" ></center> 
+        <p class="yazi">✔️Uygulamadan MySQL i aktif ettikten sonra <font color="blue" size="3">localhost/phpmyadmin/</font> den veri tabanına giriş yapabilirsiniz. </p>
+        <p class="yazi">✔️Veri tabanı oluşturmak için sol tarafta bulunan <font color="blue" size="3">yeni</font> adlı kısma basıp veri tabanı oluşturabilirsiniz.</p>
+        <p class="yazi">✔️<font color="blue" size="3">Yeni</font> adlı kısma bastıktan sonra oluşturacağınız veri tabanının adını ve yanında bulunan dil seçeneklerini seçip oluştur a bastıktan sonra <br>
+         veri tabanına veri türleri,sütun isimlerini ve verileri girmeniz gerekiyor.Buradan <a href="https://www.youtube.com/watch?v=vBIo_UfCqB8&t=141s">PHPMyadmin oluşturma</a> gidip bakabilirsiniz.</p>
+       
+    </div>
+
+    <div class="anlatım">
+        <center><h2>PROJEDEKİ PHP KODLARI</h2></center>
+        <p class="yazi">Genel olarak PHP'nin nasıl çalıştığını anlattım.Şimdi ise projemde kullandığım PHP kodlarını anlatıcam.</p><br>
+        <code> 
+            <pre>
+
+               <font color="blue"> < ?php </font>
+
+               <font color="blue">if</font>($kayit -> num_rows>0)
+                        {
+                <font color="blue">while</font>($satir=$kayit->fetch_assoc())
+                        {
+                       echo "Araç Numarası:" . $satir["Arac_id"];
+                       echo "Araç Markası:" . $satir["Arac_markası"];
+                       echo "Araç Fiyatı:" . $satir["Arac_fiyati"];
+                       echo "Araç Stok:" . $satir["Arac_stok"];
+                   }
+                }
+                <font color="blue">?></font>
+            </pre>
+        </code>
+               
+            <h3 >-KODLARI ANLATIM-</h3>
+            <p class="yazi"><font color="blue">if</font> döngüsü ile <font color="blue">$kayit</font> diye oluşturduğum değişken -> işaret ile veri tabanına yönlendirip <font color="blue">num_rows>0</font> dan büyük olanları döngüye soktum.</p>
+            <p class="yazi"><font color="blue">While</font> döngüsü ile <font color="blue">$satir</font> diye oluşturduğum değişken ve <font color="blue">$kayit</font> diye oluşturduğum değişkeni <font color="blue">fetch_assoc</font> komutuyla veritabanına yönlendirdim.</p>
+            <p class="yazi"> <font color="blue">Echo</font>komutuyla veri tabanındaki oluşturduğum tablodaki gerekli verileri çektim.</p>
+
+                <ol type="1" class="yazi">
+                    <li> <font color="blue">num_rows:</font>Bir sonuç kümesinden satırların sayısını gösterir.</li>
+                    <li><font color="blue">fetch_assoc():</font> Sütun isimlerine indisli bir dizi döner.Yani bizi veri tabanına yönlendirir.</li>
+                    <li><font color="blue">echo "Araç Numarası:" . $satir["Arac_id"]:</font>Bu satırda ise <font color="blue">echo</font> komutuyla Araç numarası adlı sütunu <font color="blue">$satir</font> değişkenini kullanarak veri tabanından <font color="blue">Arac_id</font> kısmını gösterir.</li>
+                </ol>
+     
+    </div>
+    <div class="anlatım">
+        <center><h2>PHP KULLANARAK VERİ TABANI ÇAĞIRMA</h2></center>
+        <p class="yazi">Bu bölümde size projemde PHP dilini kullanarak MySQL veri tabanını nasıl çağırdığımdan bahsedicem.<br>
+        Bu işlemi yapmadan önce tabiki önce veri tabanını oluşturup içine de size uygun tabloyu oluşturmanız gerekiyor.Bu işlemi nasıl yaptığımı size anlattım.<br>
+        Neyse şimdi kodlara geçicek olursak;</p>
+        <br>
+        <code> 
+            <pre>
+                <font color="blue">< ?php</font>
+                        error_reporting(0);
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "";
+                        $dbname = "arac";
+
+
+
+                        $conn = new mysqli($servername, $username, $password, $dbname);
+                        $new = mysqli_set_charset($conn, "utf8");
+                <font color="blue">if($conn->connect_error)</font>
+                        {
+                            die("Bağlantı Hatası:" . $conn->connect_error);
+
+                        }
+
+                <font color="blue">if</font>($_POST) {
+                            $no = $_POST["Aracid"];
+
+                            $bul = "SELECT * FROM araclar where Arac_id='$no ' ";
+                            $kayit = $conn->query($bul);
+
+                        }
+
+                        $conn->close();
+
+                    ?>
+                </pre>
+        </code>
+      <img style="float: right;margin-top: -350px;margin-right: 600px;" src="resim4.png" width="400px">
+      <h3 >-KODLARI ANLATIM-</h3>
+    <p class="yazi"><font color="blue">Error_reporting()</font> ile ilk olarak php kodlarında hata ayıklama işlemini başlattım.<br>Sunucumu ve veri tabanını belirlemek için <font color="blue">$servername</font> ve <font color="blue">$dbname</font> adında değişken oluşturup <font color="blue">MySQLadmin</font> de oluşturduğum "arac" isimli veri tabanını çağırdım.</p>
+    <p class="yazi"><font color="blue">$conn</font> diye oluşturduğum değişkene new mysqli ile veri tabanı işlemlerini atadım.<font color="blue">$new</font> değişkenine ise<font color="blue">mysqsli_set_charset</font>  komutu ile <font color="blue">$conn</font> değişkenini utf8 olarak attım.</p>
+    <p class="yazi"><font color="blue">İf</font> döngüsü ile <font color="blue">$conn</font> değişkeninde hata var mı yok mu diye sorguladım.</p>
+     <p class="yazi"><font color="blue">İf</font> döngüsünün içine <font color="blue">$_POST</font> değişkenini kullanarak veri tabanından "Aracid" sütununu çektim.<br>Devamında <font color="blue">$bul</font> değişkenine veri tabanındaki "araclar" tablosunda "Arac_id si $no olanları" çektirdim ve son olarak <font color="blue">$kayit</font> değişkeni ile veri tabanına ulaştım.</p>
+     <p class="yazi">Yukarıda gördüğünüz projemdeki kısımda text kısmına 1'den 6'ya kadar sayı girip göster kısmına tıklarsanız veri tabanındaki "Arac_id si #no olanları" listeler. </p>
+
+     <ol type="1" class="yazi">
+        <li> <font color="blue">error_reporting():</font>Hata mesajı vermesini sağlayabilir veya hata mesajlarını göstermesini engeller.</li>
+        <li><font color="blue">new mysqli:</font>Veri tabanınındaki değerleri projeye getirir.</li>
+        <li><font color="blue">SELECT * FROM araclar where Arac_id='$no '</font>Araclar tablosundaki verilerin hepsini seçip Arac_id si '$no' olanlara göre aratır.</li>
+    </ol>
+     </div>
+
+
+
+
+     <div class="anlatım">
+        <center><h2>BOOTSTRAP NEDİR?</h2></center>
+        <p class="yazi">Bootstrap tasarlanacak web sitelerinin tablet, telefon, bilgisayar gibi her türlü ekran çözünürlüğüne duyarlı olacak şekilde ayarlamaya yarayan açık kaynak kodlu bir framework olarak denilebilir.</p>
+        <h4>Bootstrap Özellikleri</h4>
+
+        <ol type="1" class="yazi">
+            <li>Responsive yapı sağlar.</li>
+            <li>Responsive resimler sağlar.</li>
+            <li>JavaScript desteği sağlar.</li>
+            <li>Geniş bir topluluğu vardır.</li>
+            <li>Tema desteği sağlar.</li>
+        </ol>
+        <h3 >-KODLARI-</h3>
+       <code>
+        <pre>
+<font color="blue">< link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"></font>
+<font color="blue">< script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script></font>
+        </pre>
+       </code>
+       <p class="yazi">Yukarıda gördüğünüz kodları <code><pre><font color="blue">< head> < /head></font></pre></code> </p><p class="yazi">taglarının içine kopyalamanız yeterlidir.</p>
+    </div>
+
+
+    <div class="anlatım">
+        <center><h2>RESPONSİVE NE DEMEK?</h2></center>
+        <p class="yazi">Responsive ekrana duyarlı demektir. Yani bilgisayarda görünen görünümü elinizde tuttuğunuz telefonun eran boyutuna göre görünümü değiştirir.<br>
+     <br><center><img class="img-fluid" src="./makale-icin-responsive-e1567295510234 (1).png" width="400px"></center>
+        </p>
+    </div>
+    <div class="anlatım">
+        <center><h2>BOOSTRAP'DA CONTAİNER SINIFI</h2></center>
+        <p class="yazi">Bootstrap içerisinde içerik kısımlarının bulunduğu ana div yapısını oluşturan bir sınıf oluşturulmuştur.Bu<b>“container”</b>sınıfıdır<br> ve bu sınıf kullanılarak 
+        ana div daha başarılı bir şekilde boyutlandırılır.<br>Container sınıfı 2 çeşittir. 1.si sadece <b>container</b>; sayfanın ortasını alır 1170px genişliğindedir,
+        2.si <b>container -fluid</b> sayfanın tamamını genişlik olarak alır.<br> Grid sistemi classları da bu container classları içerisinde kullanılarak tasarımlar 
+        sorunsuz oluşturulmaktadır.Ekran çözünürlüklerine göre grid sınıflarını ve container<br> boyutlarını gösteren görseli inceleyerek başlayalım.</p>
+       <center><img class="img-fluid" src="./bootstrap_grid.png" width="410px"></center>
+       <p class="yazi">Yukarıda gösterildiği gibi, responsive bir tasarım yapabilmek için her cihaz ölçüsüne uygun bir kod yazılması gerekmektedir.
+        Bu sayede tüm cihazlarda stabil çalışan bir tasarım elde edebiliriz.<br> Bootstrap içerisinde verilen içerik alanı öncelikle satıra daha sonra da sütunlara ayrılarak gridler oluşturulmaktadır.
+        div tagına row class’ı vererek bir satır açarız ve artık bu satır içerisinde kolonlarımızı oluşturabiliriz.<br><br>
+        Her satır 12 parçaya ayrılmıştır.Burada bize kullanıma sunulmuş olan sınıflar her 1 sutun boyutuyla kullanılabileceği gibi 2,3,4,5…12 li parça şeklinde de kullanılabilir.
+        <br>
+        <b>.container</b> ile responsive olarak yani tarayıcı genişliğine göre .container class' ı sayfamızın alacağı sabit genişliği belirler. Bunu hemen
+        örnek ile pekiştirmenizi istiyorum.</p>
+        Burası HTML kısmıdır.
+        <b>
+            <code>
+                <pre>
+                < !DOCTYPE html>
+                     < div class="container">
+                    < /div>   
+                < /html>
+                </pre>
+            </code>
+        </b>
+        Burası ise CSS kısmıdır.
+        <b>
+            <code>
+                <pre>
+                    .container{
+                        height:100px;
+                        background-color:blue;
+                      }
+                </pre>
+            </code></b>
+            <div id="acıklama">Şimdi bu kodlardan elde ettiğimiz görüntüye bir göz atalım.</div><br>
+            <div id="resimler">
+                <img class="img-fluid" src="resim2.png" width="400px"> Bu görsel tarayıcının boyutu tam ekrandadır.
+            </div><br><br>
+        Burası HTML kısmıdır.
+<b>
+ <code>
+ <pre>
+< !DOCTYPE html>
+< div class="container-fluid">         
+< /div>
+< /html>
+</pre>
+</code>
+</b>
+        Bu kısım ise CSS kısmıdır.
+<b>
+<code>
+<pre>
+.container-fluid{
+    height:100px;
+    background-color:blue;
+}
+</pre>
+</code>
+</b>
+<div id="resimler">
+    <img class="img-fluid" src="resim1.png" width="400px"> Bu görsel ise tarayıcının küçük ekrandaki görünümüdür.Umarım farkı anlamışsınızdır.
+</div><br><br>
+<div id="acıklama">Farkı açıklamak istiyorum ben yinede.Fark şu:Mavi şerit her iki boyutta da gördüğünüz gibi tam ortalanmış ve boyutu orantılı azalıp
+    artıyor.Dİğer sınıf yani <b>.container-fluid</b> ile tarayıcının genişliğini hesaba katmadan tam ekran genişliğinde bir sayfamız olur.İkisinin farkını
+    görmenizi istediğim için ekranda nasıl durduğunu yukarıdaki görsellerde görebilirsiniz.
+    </div><br>
+    </div>
+    <div class="anlatım">
+        <center><h2>BOOSTRAP-4 GRİD SİSTEMİ ÖZELLİKLERİ</h2></center>
+        <p>Grid sistemin en büyük avantajı responsive bir yapıya sahip olmasıdır 
+    yani tarayıcı genişliğine göre her bir kolonu yan yana ya da alt alta alabiliriz.<br>
+   <b>@media query</b>' ler ile tarayıcının o anki genişliğini alabiliyoruz ve aldığımız bu değerlere göre etiketlerini yani bootstrap açısından baktığımızda oluşturduğumuz her kolonu alt alta ya da yan yana alabiliriz.<br>
+    Eğer ki satırda yer varsa yan yana eğer satırda yer kalmadıysa alt satıra alabiliyoruz ki; masaüstü bilgisayarda <br> açılan bir sitenin görünümü yatayda yer kaplarken mobile bir cihazda açılan site tasarımındaki her kolonun 
+    alt alta gelmesi daha bir görünüm sağlayacaktır.</p><br>
+    <p>Boostrap aşağıdaki <b>media query </b>değerlerini kullanmaktadır.</p><br>
+    <p><b>
+        //Küçük Cihazlarda (576px ve yukarısı)<br>
+        @media (min-width: 576px) { ... }<br>
+        <br>
+        //Orta Boy Cihazlarda (tablet, 768px ve yukarısı)<br>
+        @media (min-width: 768px) { ... }<br>
+        <br>
+        //Büyük Cihazlarda (Masaüstü Bilgisayarlar, 992px ve yukarısı)<br>
+        @media (min-width: 992px) { ... }<br>
+        <br>
+        //Ekstra Büyük Cihazlarda (Büyük Masaüstü Bilgisayarlar, 1200px ve yukarısı)<br>
+        @media (min-width: 1200px) { ... }<br>
+        <br>
+    </b>
+    </p>
+    <p><b>
+        Yani tarayıcı genişliği;<br><br>
+        --576px ve aşağısında mı (.xs)<br>
+        <br>
+        --minimum 576px ve 768px aralığında mı (.sm)<br>
+        <br>
+        --minimum 768px ve 992px aralığında mı (md)<br>
+        <br>
+        --minimum 992px ve 1200px aralığında mı (lg)<br>
+        <br>
+        --ya da 1200px ve üstünde mi (xl)<br>
+        <br>
+    </b>
+    </p>
+    <p>Ek bir bilgi vermek istiyorum size <b>.xs sınıfı bootstrap 4 'de kullanılmamaktadır.</b></p>
+    <br>
+    <p>
+    media query kullanarak sayısal değerlerle uğraşmak yerine bootstrap 4 ile belirlenen ve her bir sayısal değere karşılık gelen class isimlerini kullanmak çok daha kolaydır.<br>
+    Bu class isimleri<b> .xs (ekstra small), .sm (small), .md (medium), .lg (large) ve .xl (eksra large)</b> sınıflarıdır.
+    </p>
+    </div>
+    <div class="anlatım">
+        <center><h2>VİSİBLE VE HİDDEN</h2></center>
+        <p>Boostrap kullanırken display tanımları yapmakla da uğraşmıyoruz.Öğelerinizin her türlü tasarımda 
+    görünüklük derecelerini sadece bir class ile yönetebiliyoruz.<br>Aşağıda vereceğim tanımları <b>visible ve hidden</b>olarak
+    ayırdım.Normal haliyle verilmiş bir visible tanımı öğeyi her türden cihazda görünür kılar.
+    Hidden ise onu gizler.<br>Gelin şimdi detaylı şekilde öğrenelim.<br></p><br>
+    <p><b>visible-lg:</b>Sadece large ekran genişliklerinde gözükür.<br>
+    <b>visible-md:</b> Sadece medium ekran genişliklerinde gözükür.<br>
+    <b>visible-sm:</b> Sadece small medium ekran genişliklerinde görünür.<br>
+    <b>visible-xs:</b> Sadece extra small ekran genişliklerinde görünür.<br>
+    <b>hidden-lg:</b> Sadece large ekran genişliklerinde gizlenir.<br>
+    <b>hidden-md:</b> Sadece medium ekran genişliklerinde gizlenir.<br>
+    <b>hidden-sm:</b> Sadece small ekran genişliklerinde gizlenir.<br>
+    <b>hidden-xs:</b> Sadece extra small ekran genişliklerinde gizlennir.<br>
+    <br>
+    <p>Tabi bu yapıları çoklu şekilde kullanabilirsiniz.Örneğin;<br><br>
+     <b>  < div class="visible-lg hidden-md visible-sm hidden-xs">< /div> </b> <br><br>
+    Yukarıda ekran genişliği large ve small medium da gözüksün fakat medium ve extra small da gözükmesin dike
+    belirtmiş olduk.
+
+    </p>
+    </p>
+
+    </div>
+
+    <div class="anlatım">
+        <center><h2>BOOSTRAP-4 GRİD SİSTEMİ ÖRNEKLERİ</h2></center>  
+          <p>Şimdi ilk örneeğimizi sizlere açıklayacağım ve sonrasında da nasıl göründüğüne bakacağız.<br>
+          Yan yana 4 farklı sütun  oluşturacağız.Tarayıcı boyutu en büyükteyken yan yana olacak şekilde görünür.<br>
+          Eğer tarayıcı boyutunu en küçük boyuta aldığımızda ise oluşturduğumuz 4 sütun altalta gelecek şekilde yeni görünüm elde ederiz.<br>
+          Şimdi HTML ve CSS kodlarını size gösterdikten sonra alt kısımda ise nasıl göründüğünü gösteren fotoğrafı yerleştireceğim.<br>
+          </p>
+          Burası HTML kısmıdır.
+      <b>
+      <code>
+      <pre>
+      < div class="container">  
+          < div class="row">
+          < div class="col-sm-3 bg-primary">.col-sm-3< /div>
+          < div class="col-sm-3 bg-danger">.col-sm-3< /div>
+          < div class="col-sm-3 bg-primary">.col-sm-3< /div>
+          < div class="col-sm-3 bg-danger">.col-sm-3< /div>
+          < /div>  
+      < /div>   
+      </pre>
+      </code>
+      </b>
+      Bu kısım ise CSS kısmıdır.
+      <b>
+      <code>
+      <pre>
+          .row{
+              height:50px;
+            }   
+      </pre>
+      </code>
+      </b>
+      <p><img class="img-fluid" src="./Ekran görüntüsü 2022-04-14 005703.png" width="400px"><br>
+      Tarayıcı boyutu tam ekrandayken görünüm böyledir.</p>
+      <p><img class="img-fluid" src="./Ekran görüntüsü 2022-04-14 010010.png" width="400px"><br>
+      Bu görünüm ise tarayıcı boyutu en küçük boyuttayken elde ettiğimiz görüntüdür.Umarım anlatımım öğrenmenize yardımcı oluyordur.<br></p>
+      </div>
+      <div class="anlatım">
+          <p>Yukarıda verdiğim örnekteki 4 sütunun boyutları birbirine eşitti. Şimdi vereceğim örnekte 2 sütun olacak.<br>
+          Fakat ikinci sütunumuz birinci sütunumuzdan büyük olacak.Tarayıcı boyutlarını değiştirdiğimizde nasıl bir görünüm oluşur??<br>
+      Siz düşüne dururken ben alta HTML ve CSS kodlarını yazıp nasıl göründüklerini göstereceğim.Sonrasındabirlikte yorumlayalım.</p>
+      Burası HTML kısmıdır.
+  <b>
+  <code>
+  <pre>
+      < div class="container">  
+      < div class="row">
+      < div class="col-md-3 bg-primary">.col-md-3< /div>
+      < div class="col-md-9 bg-danger">.col-md-3< /div>  
+  < /div>   
+  < /div>
+  </pre>
+  </code>
+  </b>
+    Bu kısım ise CSS kısmıdır.
+    <b>
+  <code>
+  <pre>
+     .container-fluid{
+         height:100px;
+         background-color:blue;
+     }
+  </pre>
+  </code>
+  </b>
+  <p><img class="img-fluid" src="./Ekran görüntüsü 2022-04-14 011149.png" width="400px"><br>
+  Tarayıcı boyutu tam ekrandayken dediğim gibi ikinci sütun birinci sütundan daha büyük.Haydi şimdi tarayıcı boyutunu en küçük boyut<br>
+  yaptığımızda nasıl bir şey ile karşılaşacağız.</p><br>
+  <p><img class="img-fluid" src="./Ekran görüntüsü 2022-04-14 011447.png" width="400px"><br>
+  Evvet umarım tahmin ettiğiniz görüntü bu görüntüdür.Sütun boyutları demek ki tarayıcı boyutunu en küçük yaptığımızda boyutlarını birbirine<br>
+  eşit şekilde alt alta yerleştiriyor.</p>
+      </div>
+      <div class="anlatım">
+          <center><h2>RENT A CAR PROJE VİDEOSU</h2></center>
+            <center>
+          <video width="360" height="320" controls="controls">
+            <source src="Projevideo.mp4" type="video/mp4" />
+            <source src="video.ogg" type="video/ogg" />
+            Tarayıcınız video etiketini desteklemiyor.
+          </video>
+        </center>
+      </div>
+
+     
+
+    <div class="anlatım">
+        <center><h2>PROJE ÖNİZLEME</h2></center>
+    <div class="gallery cf anlatim">
+        <div>
+          <img src="1.png" />
+        </div>
+        <div>
+          <img src="2.png" />
+        </div>
+        <div>
+          <img src="3.png" />
+        </div>
+        <div>
+          <img src="4.png" />
+        </div>
+        <div>
+          <img src="5.png" />
+        </div>
+        <div>
+          <img src="6.png" />
+        </div>
+      </div>
+    </div>
+      
+
+     <div class="anlatım kenar ">
+
+         <center><h2>İLETİŞİM</h2></center>
+
+         <p class="yazi">Yaptığım projeye daha detaylı bakmak ve benimle iletişime geçmek için aşağıdaki bağlantılardan tıklayarak ulaşabilirsin.</p>
+
+        <p class="yazi">Linkedn Hesabım:<a href="https://www.linkedin.com/in/bariskypnr/">BARIŞ KIYIPINAR</a></p>
+
+        <p class="yazi">Projenin verilerine ulaşmak için:</p><a href="https://github.com/bariskiyipinar">Github profilim</a> 
+     </div>
+     <br>
+</body>
+</html>
