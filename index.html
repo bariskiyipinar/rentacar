@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <head>
+<<<<<<< Updated upstream
 	 <link rel="icon" href="Tanitimsayfafoto/logo1.jpg" type="Tanitimsayfafoto/logo1.jpg />
+=======
+    <link rel="icon" href="logo1.jpg" type="logo1.jpg />
+>>>>>>> Stashed changes
     <meta charset="utf-8">
     <title>Araç Kiralama Tanıtım </title>
     <link rel="stylesheet" href="bootstrap.min.css">
@@ -23,6 +27,7 @@
             padding: 15px;
             background-color: rgb(255, 245, 245);
         }
+
         .XAMPP{
             border-style: solid;
             border-width: 3px;
@@ -30,6 +35,7 @@
             margin: 15px;
             padding: 15px;
             background-color: rgb(255, 245, 245);
+           
         }
         h2{
             color: rgb(33, 12, 12);
@@ -66,19 +72,18 @@
             border-width: 3px;
             border-color: #0000CC;
             animation-name: cssanimasyonlar1;
-            animation-duration: 30s;
+            animation-duration: 60s;
         }
 
       
 
             @keyframes cssanimasyonlar1 {
                 
-            50%  { background-color: bisque   }
-           
-            60%  { background-color: lightblue;   }
-            
+            10%  { background-color: bisque   }
+
+            10%  { background-color:lightblue;   }
         }
-      
+
 .gallery {
   width: 640px;
   margin: 0 auto;
@@ -97,7 +102,7 @@
   display: block;
   width: 200px;
   transition: .1s transform;
-  transform: translateZ(0); 
+  transform: translateZ(0); /* hack */
 }
 
 .gallery > div:hover {
@@ -118,6 +123,7 @@
 .cf:after {
   clear: both;
 }
+
 
     </style>
 
@@ -279,7 +285,7 @@
                     ?>
                 </pre>
         </code>
-      <img style="float: right;margin-top: -350px;margin-right: 600px;" src="Tanitimsayfafoto/resim3.png" width="400px">
+      <img style="float: right;margin-top: -350px;margin-right: 600px;" src="Tanitimsayfafoto/resim4.png" width="400px">
       <h3 >-KODLARI ANLATIM-</h3>
     <p class="yazi"><font color="blue">Error_reporting()</font> ile ilk olarak php kodlarında hata ayıklama işlemini başlattım.<br>Sunucumu ve veri tabanını belirlemek için <font color="blue">$servername</font> ve <font color="blue">$dbname</font> adında değişken oluşturup <font color="blue">MySQLadmin</font> de oluşturduğum "arac" isimli veri tabanını çağırdım.</p>
     <p class="yazi"><font color="blue">$conn</font> diye oluşturduğum değişkene new mysqli ile veri tabanı işlemlerini atadım.<font color="blue">$new</font> değişkenine ise<font color="blue">mysqsli_set_charset</font>  komutu ile <font color="blue">$conn</font> değişkenini utf8 olarak attım.</p>
@@ -321,79 +327,105 @@
 
 
     <div class="anlatım">
-        <center><h2>RESPONSİVE NE DEMEK?</h2></center>
-        <p class="yazi">Responsive ekrana duyarlı demektir. Yani bilgisayarda görünen görünümü elinizde tuttuğunuz telefonun eran boyutuna göre görünümü değiştirir.<br>
-     <br><center><img class="img-fluid" src="./makale-icin-responsive-e1567295510234 (1).png" width="400px"></center>
-        </p>
+        <center><h2>MySQL PHPMyADMİN İLE TABLO OLUŞTURMA</h2></center>
+        <p class="yazi">Bu bölümde Veritabanı ile ilgili tablo oluşturma üzerinde duracağız.<br>Aşağıdaki  tabloyu PhpMyAdminde oluşturdum,XAMPP yüklediyseniz <font color="blue">http://localhost/phpmyadmin</font> yazarak, PhpMyAdmin veritabanı yönetim arayüzüne ulaşabilirsiniz. </p>
+        <p class="yazi">Size yukardaki bölümde veri tabanı oluşturmayı anlatmıştım.Veritabanı oluşturduktan sonra  araclar tablomuzu oluşturdum.</p>
+        <img  src="Tanitimsayfafoto/ekrangörüntüsü5.png">
+        <p class="yazi">Yukarıdaki oluşturduğum tabloda Arac_id kısmını <font color="blue">Primary Key</font> olarak ayarladım.4 tane sütun oluşturduktan sonra türlerini belirledim.</p>
+        <ol type="1" class="yazi">
+            <li><font color="blue">Primary Key:</font>PRIMARY KEY(birincil anahtar) olarak atanan sütunlar null değer içeremez. Bir tabloda yalnızca bir Primary key olabilir ve tabloda, bu birincil anahtar bir veya birden fazla sütundan oluşabilir.</li>
+            <li><font color="blue">Varchar:</font>Tabloda verinin türünü belirlemek için kullanılır.Karakter anlamına gelir.</li>
+            <li><font color="blue">İnt:</font>Tabloda verinin sayı olduğunu belirlemek için kullanılır.</li>
+        </ol>
     </div>
-    <div class="anlatım">
-        <center><h2>BOOSTRAP'DA CONTAİNER SINIFI</h2></center>
-        <p class="yazi">Bootstrap içerisinde içerik kısımlarının bulunduğu ana div yapısını oluşturan bir sınıf oluşturulmuştur.Bu<b>“container”</b>sınıfıdır<br> ve bu sınıf kullanılarak 
-        ana div daha başarılı bir şekilde boyutlandırılır.<br>Container sınıfı 2 çeşittir. 1.si sadece <b>container</b>; sayfanın ortasını alır 1170px genişliğindedir,
-        2.si <b>container -fluid</b> sayfanın tamamını genişlik olarak alır.<br> Grid sistemi classları da bu container classları içerisinde kullanılarak tasarımlar 
-        sorunsuz oluşturulmaktadır.Ekran çözünürlüklerine göre grid sınıflarını ve container<br> boyutlarını gösteren görseli inceleyerek başlayalım.</p>
-       <center><img class="img-fluid" src="./bootstrap_grid.png" width="410px"></center>
-       <p class="yazi">Yukarıda gösterildiği gibi, responsive bir tasarım yapabilmek için her cihaz ölçüsüne uygun bir kod yazılması gerekmektedir.
-        Bu sayede tüm cihazlarda stabil çalışan bir tasarım elde edebiliriz.<br> Bootstrap içerisinde verilen içerik alanı öncelikle satıra daha sonra da sütunlara ayrılarak gridler oluşturulmaktadır.
-        div tagına row class’ı vererek bir satır açarız ve artık bu satır içerisinde kolonlarımızı oluşturabiliriz.<br><br>
-        Her satır 12 parçaya ayrılmıştır.Burada bize kullanıma sunulmuş olan sınıflar her 1 sutun boyutuyla kullanılabileceği gibi 2,3,4,5…12 li parça şeklinde de kullanılabilir.
-        <br>
-        <b>.container</b> ile responsive olarak yani tarayıcı genişliğine göre .container class' ı sayfamızın alacağı sabit genişliği belirler. Bunu hemen
-        örnek ile pekiştirmenizi istiyorum.</p>
-        Burası HTML kısmıdır.
-        <b>
-            <code>
-                <pre>
-                < !DOCTYPE html>
-                     < div class="container">
-                    < /div>   
-                < /html>
+
+    <div class="anlatım ">
+        <center><h2>PROJEME RESİM GALERİSİ EKLEMEK</h2></center>
+        <p class="yazi">Projeme nasıl <font color="blue">Lightbox(resim galerisi)</font> ekledim bu bölümde kısaca ondan bahsedicem.<br>Resim galerisini yapmak istiyorsanız hem HTML hem de CSS dilini kullanmanız gerekmektedir.HTML resimleri göstermek CSS ise şeklini düzenlemek için gereklidir.<br><br>
+        Resim galerisi yapmak için aşağıdaki kodları kullanabilirsiniz.</p>
+        <img src="Tanitimsayfafoto/resimgalerisi.png">
+       <h3>KODLARI</h3>
+        <code>
+            <pre>
+              <font color="blue">< div class="galeri"></font>  
+                    < a href="image/res1.png"> 
+                        < img src="image/res1.png" > 
+                    < /a> 
+                    < a href="image/res2.png"> 
+                        < img src="image/res2.png" > 
+                    < /a> 
+                    < a href="image/res3.png"> 
+                        < img src="image/res3.png" > 
+                    < /a> 
+                    < a href="image/res4.png"> 
+                        < img src="image/res4.png" > 
+                    < /a>  
+                    <font color="blue">< /div></font>  
+            </pre>
+        </code>
+    
+        <div style="margin-left: 420px;margin-top: -250px;">
+        <code >
+            <pre>
+               
+                   <font color="blue">body</font>  { 
+                        text-align: center; 
+                    } 
+                      
+                    <font color="blue">h2</font> { 
+                        color: green; 
+                    } 
+                      
+                    <font color="blue">.galeri</font> { 
+                        margin: 10px 40px; 
+                    } 
+                      
+                    <font color="blue">.galeri img</font> { 
+                        width: 200px; 
+                        height: 100px; 
+                        transition: 1s; 
+                        padding: 5px; 
+                    } 
+                      
+                    <font color="blue">.galeri img:hover</font> { 
+                        filter: drop-shadow(4px 4px 6px gray); 
+                        transform: scale(1.1); 
+                    } 
+
                 </pre>
-            </code>
-        </b>
-        Burası ise CSS kısmıdır.
-        <b>
-            <code>
-                <pre>
-                    .container{
-                        height:100px;
-                        background-color:blue;
-                      }
-                </pre>
-            </code></b>
-            <div id="acıklama">Şimdi bu kodlardan elde ettiğimiz görüntüye bir göz atalım.</div><br>
-            <div id="resimler">
-                <img class="img-fluid" src="resim2.png" width="400px"> Bu görsel tarayıcının boyutu tam ekrandadır.
-            </div><br><br>
-        Burası HTML kısmıdır.
-<b>
- <code>
- <pre>
-< !DOCTYPE html>
-< div class="container-fluid">         
-< /div>
-< /html>
-</pre>
-</code>
-</b>
-        Bu kısım ise CSS kısmıdır.
-<b>
-<code>
-<pre>
-.container-fluid{
-    height:100px;
-    background-color:blue;
-}
-</pre>
-</code>
-</b>
-<div id="resimler">
-    <img class="img-fluid" src="resim1.png" width="400px"> Bu görsel ise tarayıcının küçük ekrandaki görünümüdür.Umarım farkı anlamışsınızdır.
-</div><br><br>
-<div id="acıklama">Farkı açıklamak istiyorum ben yinede.Fark şu:Mavi şerit her iki boyutta da gördüğünüz gibi tam ortalanmış ve boyutu orantılı azalıp
-    artıyor.Dİğer sınıf yani <b>.container-fluid</b> ile tarayıcının genişliğini hesaba katmadan tam ekran genişliğinde bir sayfamız olur.İkisinin farkını
-    görmenizi istediğim için ekranda nasıl durduğunu yukarıdaki görsellerde görebilirsiniz.
-    </div><br>
+        </code>
+  </div>
+
+
+
+       <!--<textarea cols="30" rows="7">
+            
+            <h2>TasarimKodlama</h2> 
+            <b>Örnek CSS Uygulamaları</b> 
+            <div class="galeri"> 
+                <a href="image/res1.png"> 
+                    <img src="image/res1.png" > 
+                </a> 
+                <a href="image/res2.png"> 
+                    <img src="image/res2.png" > 
+                </a> 
+                <a href="image/res3.png"> 
+                    <img src="image/res3.png" > 
+                </a> 
+                <a href="image/res4.png"> 
+                    <img src="image/res4.png" > 
+                </a>  
+            </div>
+        
+        </textarea> 
+      <h4>CSS KODLARI</h4>
+            <textarea cols="30" rows="7" style="float: right;margin-top: -170px;margin-right: 1300px;">
+
+               
+
+            </textarea>
+--> 
+
     </div>
     <div class="anlatım">
         <center><h2>BOOSTRAP-4 GRİD SİSTEMİ ÖZELLİKLERİ</h2></center>
@@ -536,6 +568,8 @@
   Evvet umarım tahmin ettiğiniz görüntü bu görüntüdür.Sütun boyutları demek ki tarayıcı boyutunu en küçük yaptığımızda boyutlarını birbirine<br>
   eşit şekilde alt alta yerleştiriyor.</p>
       </div>
+
+
       <div class="anlatım">
           <center><h2>RENT A CAR PROJE VİDEOSU</h2></center>
             <center>
@@ -585,5 +619,6 @@
         <p class="yazi">Projenin verilerine ulaşmak için:</p><a href="https://github.com/bariskiyipinar">Github profilim</a> 
      </div>
      <br>
+   
 </body>
 </html>
