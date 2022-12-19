@@ -341,7 +341,7 @@
         <p class="yazi">Projeme nasıl <font color="blue">Lightbox(resim galerisi)</font> ekledim bu bölümde kısaca ondan bahsedicem.<br>Resim galerisini yapmak istiyorsanız hem HTML hem de CSS dilini kullanmanız gerekmektedir.HTML resimleri göstermek CSS ise şeklini düzenlemek için gereklidir.<br><br>
         Resim galerisi yapmak için aşağıdaki kodları kullanabilirsiniz.</p>
 	    <center><img src="Tanitimsayfafoto/resimgalerisi.png"></center>
-       <h3>KODLARI</h3>
+       <h3>--KODLARI--</h3>
         <code>
             <pre>
               <font color="blue">< div class="galeri"></font>  
@@ -394,178 +394,93 @@
   </div>
 
 
+    </div>
 
-       <!--<textarea cols="30" rows="7">
+
+    <div class="anlatım">
+
+        <center><h2>PHP İLE TABLO OLUŞTURMA</h2></center>
+
+       <p class="yazi">Bu bölümde <font color="blue">PHP de Array (dizi)</font> oluşturarak bu dizi içindeki elemanların tablo içine aktarılmasını göstericem.</p>
+
+       <h3>--KODLARI--</h3>
+<center>
+       <textarea cols="40" rows="7" style="resize:none; width:1400px;height: 300px; border-style: solid;border-width: 3px;border-color:lightblue;">
+
+        <!--PHP TABLO OLUŞTURMA-->
+          <?php
+                $urunler = array('Hyundai Elantra' => 1500, 'Audi Q7 2.0 TFSI' => 2500, 'Ford Kuga 2021' =>2750,'Jeep Renegade'=>4500,'Fiat Egea 2019'=>1500,'BMW G20 2019'=>4500);
+	        ?>
+
+        <div class="form2">
+                <table class="table" style="background-color: #f6d601;
+                display: inline-block;">
+            <thead class=" thead-dark">
+                <tr>
+                <th scope="col">İd</th>
+                <th scope="col">Araçlar</th>
+                <th scope="col">Kiralama Fiyatı</th>
+                </tr>
+            </thead>
             
-            <h2>TasarimKodlama</h2> 
-            <b>Örnek CSS Uygulamaları</b> 
-            <div class="galeri"> 
-                <a href="image/res1.png"> 
-                    <img src="image/res1.png" > 
-                </a> 
-                <a href="image/res2.png"> 
-                    <img src="image/res2.png" > 
-                </a> 
-                <a href="image/res3.png"> 
-                    <img src="image/res3.png" > 
-                </a> 
-                <a href="image/res4.png"> 
-                    <img src="image/res4.png" > 
-                </a>  
+            <?php
+                $i=1;
+                foreach($urunler as $anahtar=>$deger)
+                {
+                    echo "<tr>";
+                    echo "<td>$i</td>";
+                    echo "<td>",$anahtar,"</td>";
+                    echo "<td>",$deger,"</td>";
+                    echo "</tr>";
+                    $i++;
+                }
+                ?>
+            </table>
             </div>
-        
-        </textarea> 
-      <h4>CSS KODLARI</h4>
-            <textarea cols="30" rows="7" style="float: right;margin-top: -170px;margin-right: 1300px;">
 
-               
+   <!--PHP TABLO OLUŞTURMA BİTİŞ-->
 
-            </textarea>
---> 
+    </textarea> 
+</center>
 
-    </div>
-    <div class="anlatım">
-        <center><h2>BOOSTRAP-4 GRİD SİSTEMİ ÖZELLİKLERİ</h2></center>
-        <p>Grid sistemin en büyük avantajı responsive bir yapıya sahip olmasıdır 
-    yani tarayıcı genişliğine göre her bir kolonu yan yana ya da alt alta alabiliriz.<br>
-   <b>@media query</b>' ler ile tarayıcının o anki genişliğini alabiliyoruz ve aldığımız bu değerlere göre etiketlerini yani bootstrap açısından baktığımızda oluşturduğumuz her kolonu alt alta ya da yan yana alabiliriz.<br>
-    Eğer ki satırda yer varsa yan yana eğer satırda yer kalmadıysa alt satıra alabiliyoruz ki; masaüstü bilgisayarda <br> açılan bir sitenin görünümü yatayda yer kaplarken mobile bir cihazda açılan site tasarımındaki her kolonun 
-    alt alta gelmesi daha bir görünüm sağlayacaktır.</p><br>
-    <p>Boostrap aşağıdaki <b>media query </b>değerlerini kullanmaktadır.</p><br>
-    <p><b>
-        //Küçük Cihazlarda (576px ve yukarısı)<br>
-        @media (min-width: 576px) { ... }<br>
-        <br>
-        //Orta Boy Cihazlarda (tablet, 768px ve yukarısı)<br>
-        @media (min-width: 768px) { ... }<br>
-        <br>
-        //Büyük Cihazlarda (Masaüstü Bilgisayarlar, 992px ve yukarısı)<br>
-        @media (min-width: 992px) { ... }<br>
-        <br>
-        //Ekstra Büyük Cihazlarda (Büyük Masaüstü Bilgisayarlar, 1200px ve yukarısı)<br>
-        @media (min-width: 1200px) { ... }<br>
-        <br>
-    </b>
-    </p>
-    <p><b>
-        Yani tarayıcı genişliği;<br><br>
-        --576px ve aşağısında mı (.xs)<br>
-        <br>
-        --minimum 576px ve 768px aralığında mı (.sm)<br>
-        <br>
-        --minimum 768px ve 992px aralığında mı (md)<br>
-        <br>
-        --minimum 992px ve 1200px aralığında mı (lg)<br>
-        <br>
-        --ya da 1200px ve üstünde mi (xl)<br>
-        <br>
-    </b>
-    </p>
-    <p>Ek bir bilgi vermek istiyorum size <b>.xs sınıfı bootstrap 4 'de kullanılmamaktadır.</b></p>
-    <br>
-    <p>
-    media query kullanarak sayısal değerlerle uğraşmak yerine bootstrap 4 ile belirlenen ve her bir sayısal değere karşılık gelen class isimlerini kullanmak çok daha kolaydır.<br>
-    Bu class isimleri<b> .xs (ekstra small), .sm (small), .md (medium), .lg (large) ve .xl (eksra large)</b> sınıflarıdır.
-    </p>
-    </div>
-    <div class="anlatım">
-        <center><h2>VİSİBLE VE HİDDEN</h2></center>
-        <p>Boostrap kullanırken display tanımları yapmakla da uğraşmıyoruz.Öğelerinizin her türlü tasarımda 
-    görünüklük derecelerini sadece bir class ile yönetebiliyoruz.<br>Aşağıda vereceğim tanımları <b>visible ve hidden</b>olarak
-    ayırdım.Normal haliyle verilmiş bir visible tanımı öğeyi her türden cihazda görünür kılar.
-    Hidden ise onu gizler.<br>Gelin şimdi detaylı şekilde öğrenelim.<br></p><br>
-    <p><b>visible-lg:</b>Sadece large ekran genişliklerinde gözükür.<br>
-    <b>visible-md:</b> Sadece medium ekran genişliklerinde gözükür.<br>
-    <b>visible-sm:</b> Sadece small medium ekran genişliklerinde görünür.<br>
-    <b>visible-xs:</b> Sadece extra small ekran genişliklerinde görünür.<br>
-    <b>hidden-lg:</b> Sadece large ekran genişliklerinde gizlenir.<br>
-    <b>hidden-md:</b> Sadece medium ekran genişliklerinde gizlenir.<br>
-    <b>hidden-sm:</b> Sadece small ekran genişliklerinde gizlenir.<br>
-    <b>hidden-xs:</b> Sadece extra small ekran genişliklerinde gizlennir.<br>
-    <br>
-    <p>Tabi bu yapıları çoklu şekilde kullanabilirsiniz.Örneğin;<br><br>
-     <b>  < div class="visible-lg hidden-md visible-sm hidden-xs">< /div> </b> <br><br>
-    Yukarıda ekran genişliği large ve small medium da gözüksün fakat medium ve extra small da gözükmesin dike
-    belirtmiş olduk.
 
-    </p>
-    </p>
+<p class="yazi"><font color="blue">$urunler</font> diye  değişken oluşturup içine <font color="blue">array komutu</font> ile dizi oluşturdum ve verileri girdim.<br>Sonrasında ise <font color="blue">< table < /table></font> komutu ile tablo oluşturdum. </p>
+<p class="yazi">Son olarakta <font color="blue">foreach</font> döngüsü ile oluştudurduğum tabloyu ekrana yazdırdım.</p>
+    
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </div>
 
-    <div class="anlatım">
-        <center><h2>BOOSTRAP-4 GRİD SİSTEMİ ÖRNEKLERİ</h2></center>  
-          <p>Şimdi ilk örneeğimizi sizlere açıklayacağım ve sonrasında da nasıl göründüğüne bakacağız.<br>
-          Yan yana 4 farklı sütun  oluşturacağız.Tarayıcı boyutu en büyükteyken yan yana olacak şekilde görünür.<br>
-          Eğer tarayıcı boyutunu en küçük boyuta aldığımızda ise oluşturduğumuz 4 sütun altalta gelecek şekilde yeni görünüm elde ederiz.<br>
-          Şimdi HTML ve CSS kodlarını size gösterdikten sonra alt kısımda ise nasıl göründüğünü gösteren fotoğrafı yerleştireceğim.<br>
-          </p>
-          Burası HTML kısmıdır.
-      <b>
-      <code>
-      <pre>
-      < div class="container">  
-          < div class="row">
-          < div class="col-sm-3 bg-primary">.col-sm-3< /div>
-          < div class="col-sm-3 bg-danger">.col-sm-3< /div>
-          < div class="col-sm-3 bg-primary">.col-sm-3< /div>
-          < div class="col-sm-3 bg-danger">.col-sm-3< /div>
-          < /div>  
-      < /div>   
-      </pre>
-      </code>
-      </b>
-      Bu kısım ise CSS kısmıdır.
-      <b>
-      <code>
-      <pre>
-          .row{
-              height:50px;
-            }   
-      </pre>
-      </code>
-      </b>
-      <p><img class="img-fluid" src="./Ekran görüntüsü 2022-04-14 005703.png" width="400px"><br>
-      Tarayıcı boyutu tam ekrandayken görünüm böyledir.</p>
-      <p><img class="img-fluid" src="./Ekran görüntüsü 2022-04-14 010010.png" width="400px"><br>
-      Bu görünüm ise tarayıcı boyutu en küçük boyuttayken elde ettiğimiz görüntüdür.Umarım anlatımım öğrenmenize yardımcı oluyordur.<br></p>
-      </div>
-      <div class="anlatım">
-          <p>Yukarıda verdiğim örnekteki 4 sütunun boyutları birbirine eşitti. Şimdi vereceğim örnekte 2 sütun olacak.<br>
-          Fakat ikinci sütunumuz birinci sütunumuzdan büyük olacak.Tarayıcı boyutlarını değiştirdiğimizde nasıl bir görünüm oluşur??<br>
-      Siz düşüne dururken ben alta HTML ve CSS kodlarını yazıp nasıl göründüklerini göstereceğim.Sonrasındabirlikte yorumlayalım.</p>
-      Burası HTML kısmıdır.
-  <b>
-  <code>
-  <pre>
-      < div class="container">  
-      < div class="row">
-      < div class="col-md-3 bg-primary">.col-md-3< /div>
-      < div class="col-md-9 bg-danger">.col-md-3< /div>  
-  < /div>   
-  < /div>
-  </pre>
-  </code>
-  </b>
-    Bu kısım ise CSS kısmıdır.
-    <b>
-  <code>
-  <pre>
-     .container-fluid{
-         height:100px;
-         background-color:blue;
-     }
-  </pre>
-  </code>
-  </b>
-  <p><img class="img-fluid" src="./Ekran görüntüsü 2022-04-14 011149.png" width="400px"><br>
-  Tarayıcı boyutu tam ekrandayken dediğim gibi ikinci sütun birinci sütundan daha büyük.Haydi şimdi tarayıcı boyutunu en küçük boyut<br>
-  yaptığımızda nasıl bir şey ile karşılaşacağız.</p><br>
-  <p><img class="img-fluid" src="./Ekran görüntüsü 2022-04-14 011447.png" width="400px"><br>
-  Evvet umarım tahmin ettiğiniz görüntü bu görüntüdür.Sütun boyutları demek ki tarayıcı boyutunu en küçük yaptığımızda boyutlarını birbirine<br>
-  eşit şekilde alt alta yerleştiriyor.</p>
-      </div>
-
+   
 
       <div class="anlatım">
           <center><h2>RENT A CAR PROJE VİDEOSU</h2></center>
