@@ -88,14 +88,19 @@
      border-radius: 30px;
      color: #000;
      font-size: 17px;
-margin-right: 400px;
+     margin-left: 400px;
      opacity: 0.8;
-   padding: 30px;
+      padding: 30px;
    
    width: 400px;
    height: auto;
 
   
+}
+.form2{
+   
+   display: inline-block;
+   margin-left: 300px;
 }
 
    
@@ -161,11 +166,14 @@ margin-right: 400px;
       <!--son başlık-->
       
 
+
       <section class="banneryeni">
 
       
+
            <!--PHP KISMI-->
         <div class="form"  style="color:black;font-family:Times New Roman;font-size:4;">
+
         <h4  style="font-weight: bold;color:black;">ARAÇ STOK TAKİBİ</h4>
               <form class=" " action=" " method="post" >
                   <input type="text" name="Aracid" value="">
@@ -188,39 +196,72 @@ margin-right: 400px;
 
          </div>
          
-          <!--PHP KISMI BİTİŞ-->     
-            
-</section>
+          <!--PHP KISMI BİTİŞ-->  
 
+            <!--PHP TABLO OLUŞTURMA-->
+          <?php
+	$urunler = array('Hyundai Elantra' => 1500, 'Audi Q7 2.0 TFSI' => 2500, 'Ford Kuga 2021' =>2750,'Jeep Renegade'=>4500,'Fiat Egea 2019'=>1500,'BMW G20 2019'=>4500);
+	?>
 
-
-<div class="row mt-5" style="margin-left: 300px;"  >
-              
-           
-              <div class="galeri" > 
-                <a href="images/1.1.jpg"> 
-                    <img src="images/1.1.jpg" > 
-                </a> 
-                <a href="images/2.1.jpg"> 
-                    <img src="images/2.1.jpg" > 
-                </a> 
-                <a href="images/3.1.jpg"> 
-                    <img src="images/3.1.jpg" > 
-                </a> 
-                <a href="images/4.1.jpg"> 
-                  <img src="images/4.1.jpg" > 
-              </a>  
-               <a href="images/5.1.png"> 
-                <img src="images/5.1.png" > 
-            </a> 
-            <a href="images/6.5.png"> 
-                <img src="images/6.5.png" > 
-            </a> 
-            </div>
-          
+<div class="form2">
+	<table class="table" style="background-color: #f6d601;
+     display: inline-block;">
+  <thead class=" thead-dark">
+    <tr>
+      <th scope="col">İd</th>
+      <th scope="col">Araçlar</th>
+      <th scope="col">Kiralama Fiyatı</th>
+    </tr>
+  </thead>
+  <tbody>
+   <?php
+	  $i=1;
+	  foreach($urunler as $anahtar=>$deger)
+	  {
+		   echo "<tr>";
+		   echo "<td>$i</td>";
+		   echo "<td>",$anahtar,"</td>";
+		   echo "<td>",$deger,"</td>";
+		   echo "</tr>";
+		   $i++;
+	  }
+	  ?>
+</table>
 </div>
-          
-        
+
+   <!--PHP TABLO OLUŞTURMA BİTİŞ-->
+
+      </section>
+      
+             
+
+
+            <div class="row mt-5" style="margin-left: 300px;"  >
+                        
+                     
+                        <div class="galeri" > 
+                           <a href="images/1.1.jpg"> 
+                              <img src="images/1.1.jpg" > 
+                           </a> 
+                           <a href="images/2.1.jpg"> 
+                              <img src="images/2.1.jpg" > 
+                           </a> 
+                           <a href="images/4.1.jpg"> 
+                              <img src="images/4.1.jpg" > 
+                           </a> 
+                           <a href="images/5.1.png"> 
+                              <img src="images/5.1.png" > 
+                        </a>  
+                           <a href="images/4.1.jpg"> 
+                     <img src="images/4.1.jpg" > 
+                  </a> 
+                  <a href="images/6.5.png"> 
+                     <img src="images/6.5.png" > 
+                  </a> 
+                  </div>
+               
+                 </div>
+
 
 
       <!-- Javascript -->
@@ -233,13 +274,6 @@ margin-right: 400px;
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
       <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-
-
-
-
-
-
-
 
 
         </body>
